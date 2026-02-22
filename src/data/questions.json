@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "question": "上司から「来週までに新規事業の提案よろしく」と言われた。まず何する？",
+    "emoji": "😱",
+    "choices": [
+      {
+        "text": "競合と顧客を徹底リサーチ。まずは敵を知らねば。",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 1, "swot": 1, "fiveForces": 2 }
+      },
+      {
+        "text": "「で、いくらで売るの？どこで売るの？」を考え始める",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 1 }
+      },
+      {
+        "text": "法規制とか経済動向とか、マクロ環境をまず調べる",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 1 }
+      },
+      {
+        "text": "ホワイトボードに強み・弱みを書き出し始める",
+        "scores": { "threeC": 1, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 1 }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "飲み会で後輩が「転職しようか迷ってます…」と相談してきた。あなたの回答は？",
+    "emoji": "🍺",
+    "choices": [
+      {
+        "text": "「その業界の成長性は？顧客は誰？競合は？」と質問攻め",
+        "scores": { "threeC": 3, "fourP": 1, "pest": 1, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "「給料（Price）、勤務地（Place）、やりがい（Product）で比較しなよ」",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "「今の政治・経済状況を考えると...」と社会情勢から語り始める",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 1 }
+      },
+      {
+        "text": "「まず自分の強みと弱みを整理してみたら？」",
+        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "ランチ何食べる？と聞かれた時の思考回路は？",
+    "emoji": "🍜",
+    "choices": [
+      {
+        "text": "周りの店の混み具合（競合）と自分の気分（顧客）を分析",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 2 }
+      },
+      {
+        "text": "予算・場所・メニュー・口コミ評価で即座にマトリクス作成",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "「最近物価上がってるしなぁ…為替の影響で輸入食材が…」",
+        "scores": { "threeC": 0, "fourP": 1, "pest": 3, "swot": 0, "fiveForces": 0 }
+      },
+      {
+        "text": "あの店は新規参入しやすいから混んでそう、別の店にしよう",
+        "scores": { "threeC": 1, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 3 }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "合コンで気になる人ができた。あなたの攻略法は？",
+    "emoji": "💘",
+    "choices": [
+      {
+        "text": "ライバル（競合）を観察し、相手のニーズ（顧客）を分析",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 2 }
+      },
+      {
+        "text": "自分という商品の見せ方・タイミング・アプローチ方法を練る",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "「いまの婚活市場のトレンド的に…」とマクロ視点で考察",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "自分の強み（S）を活かしつつ、弱み（W）をカバーする戦略",
+        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "友達と旅行の計画を立てることに。あなたの役割は？",
+    "emoji": "✈️",
+    "choices": [
+      {
+        "text": "人気観光地（市場）と穴場（競合少）をリサーチ担当",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 1, "swot": 0, "fiveForces": 2 }
+      },
+      {
+        "text": "予算配分・宿泊先・移動手段・スケジュールを完璧に設計",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "天候・現地の政情・為替レート・感染症情報を念入りにチェック",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "メンバーの体力差や好みの違いを考慮してリスクヘッジ",
+        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "会議で意見が対立した！あなたはどう動く？",
+    "emoji": "🔥",
+    "choices": [
+      {
+        "text": "「顧客視点で考えましょう」と議論をリセットする",
+        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "「具体的に、何を・いくらで・どこで・どう売るか整理しません？」",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "「そもそも市場環境の前提認識がズレてませんか？」",
+        "scores": { "threeC": 1, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "「この業界の参入障壁と既存プレイヤーの力関係を整理しましょう」",
+        "scores": { "threeC": 1, "fourP": 0, "pest": 1, "swot": 0, "fiveForces": 3 }
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "新しいカフェがオープン。あなたが気になるポイントは？",
+    "emoji": "☕",
+    "choices": [
+      {
+        "text": "近隣にスタバとドトールがある中でどう差別化してるか",
+        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 2 }
+      },
+      {
+        "text": "メニュー構成・価格帯・立地・SNSでの宣伝方法",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "このご時世に飲食で起業する勇気…経済環境的に大丈夫？",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 1 }
+      },
+      {
+        "text": "大手チェーンの交渉力や代替品（コンビニコーヒー）との関係",
+        "scores": { "threeC": 1, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 3 }
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "推しのアイドルグループの人気が落ちてきた。原因分析するなら？",
+    "emoji": "🎤",
+    "choices": [
+      {
+        "text": "ファン（顧客）のニーズ変化と競合グループの台頭を調査",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 1, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "楽曲・価格・イベント会場・プロモーション戦略を再評価",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "SNS時代の変化、Z世代の価値観シフトなど社会的背景から考える",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "グループの強み・弱み・チャンス・ピンチを4象限で整理",
+        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "「あなたの仕事のスタイルを一言で」と言われたら？",
+    "emoji": "💼",
+    "choices": [
+      {
+        "text": "「常に市場と顧客と競合を見てます」← 目が3つある人",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
+      },
+      {
+        "text": "「戦略は4つの軸で考えるのが基本です」← 几帳面すぎる人",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "「マクロ環境を読まずにビジネスは語れません」← 新聞3紙読む人",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "「業界構造を理解することが全ての始まり」← 業界地図マニア",
+        "scores": { "threeC": 1, "fourP": 0, "pest": 1, "swot": 0, "fiveForces": 3 }
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "最後の質問！あなたの本棚に一番多い本のジャンルは？",
+    "emoji": "📚",
+    "choices": [
+      {
+        "text": "マーケティング戦略・顧客分析系の本",
+        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "実践的なビジネスプラン・マーケティングミックスの本",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+      },
+      {
+        "text": "経済ニュース・地政学・未来予測系の本",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+      },
+      {
+        "text": "自己啓発・ストレングスファインダー的な本",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 1 }
+      }
+    ]
+  }
+]
