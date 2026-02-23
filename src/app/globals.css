@@ -185,13 +185,6 @@ ul {
   margin-bottom: 16px;
 }
 
-.question-emoji {
-  text-align: center;
-  font-size: 56px;
-  margin-bottom: 12px;
-  animation: pop 0.4s ease;
-}
-
 @keyframes pop {
   0% { transform: scale(0.5); opacity: 0; }
   70% { transform: scale(1.1); }

@@ -1,230 +1,230 @@
 [
   {
     "id": 1,
-    "question": "友達とランチに行くことに。お店はどう決める？",
-    "emoji": "🍽️",
+    "question": "週末の予定、どうやって決めてる？",
+    "emoji": "",
     "choices": [
       {
-        "text": "みんなの気分を聞いて、近くで空いてそうな店を探す",
+        "text": "友達や恋人の予定を聞いてから自分の予定を合わせる",
         "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
       },
       {
-        "text": "予算・場所・ジャンル・口コミ評価で候補を絞り込む",
+        "text": "やりたいこと・行きたい場所・予算をリストアップして決める",
         "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "最近のグルメトレンドや話題のエリアから考える",
+        "text": "天気とか季節感で「今日はこれだな」とノリで決める",
         "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "自分たちの好みや苦手なものを整理して消去法で決める",
+        "text": "疲れ具合や気分に合わせて、無理のない過ごし方を選ぶ",
         "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
       }
     ]
   },
   {
     "id": 2,
-    "question": "引っ越しを考え中。物件選びで一番重視することは？",
-    "emoji": "🏠",
+    "question": "グループで何か決めるとき、あなたのポジションは？",
+    "emoji": "",
     "choices": [
       {
-        "text": "職場・友人・よく行く店へのアクセスの良さ",
-        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
+        "text": "みんなの意見を聞いて、うまくまとめようとする",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
       },
       {
-        "text": "家賃・広さ・設備・周辺施設のバランス",
+        "text": "選択肢を整理して「こうしない？」と具体案を出す",
         "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "再開発の予定や街の将来性、地価の動向",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 0 }
+        "text": "「でもさ、こういう事情もあるよね」と視野を広げる一言を言う",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "住民の雰囲気や管理会社の評判、近隣トラブルの有無",
+        "text": "誰が一番詳しいか・得意かを見て、その人に任せる",
         "scores": { "threeC": 1, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 3 }
       }
     ]
   },
   {
     "id": 3,
-    "question": "気になる人とのデートプラン。あなたの考え方は？",
-    "emoji": "💕",
+    "question": "友達から相談されたとき、つい最初にやっちゃうことは？",
+    "emoji": "",
     "choices": [
       {
-        "text": "相手の趣味や最近の投稿をリサーチしてから決める",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 1, "swot": 0, "fiveForces": 1 }
+        "text": "「相手はどう思ってるの？」と周りの状況を聞く",
+        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "場所・時間・お店・次の展開まで具体的に段取りする",
+        "text": "「で、具体的にどうしたいの？」とゴールを確認する",
         "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "季節のイベントや流行りのスポットを活かしたプランにする",
-        "scores": { "threeC": 0, "fourP": 1, "pest": 3, "swot": 0, "fiveForces": 0 }
+        "text": "「そもそもなんでそうなったの？」と経緯を聞きたくなる",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "自分の得意分野を活かせるプランで勝負する",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 1 }
+        "text": "「あなたはどうしたいの？」と本人の気持ちを聞く",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
       }
     ]
   },
   {
     "id": 4,
-    "question": "友達グループでの旅行計画。あなたが自然と担当するのは？",
-    "emoji": "✈️",
+    "question": "新しいお店を選ぶとき、何を一番参考にする？",
+    "emoji": "",
     "choices": [
       {
-        "text": "みんなの希望を聞き取って、全員が納得する行き先を見つける",
+        "text": "友達のおすすめや「あそこ良かったよ」の口コミ",
         "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
       },
       {
-        "text": "交通手段・宿・予算・タイムテーブルをスプレッドシートで管理",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 0, "fiveForces": 1 }
+        "text": "メニュー・価格・場所・営業時間を調べて比較する",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "天気予報、現地のイベント情報、混雑状況をチェック",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 0 }
+        "text": "SNSで話題になってるかどうか、今の人気度",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "雨の日プランやトラブル時の代替案も事前に用意しておく",
+        "text": "自分の好みに合いそうかどうか、直感と過去の経験",
         "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
       }
     ]
   },
   {
     "id": 5,
-    "question": "SNSで友達が転職報告。あなたの最初の感想は？",
-    "emoji": "📱",
+    "question": "大きな買い物をするとき、あなたはどのタイプ？",
+    "emoji": "",
     "choices": [
       {
-        "text": "「前の会社と比べてどうなんだろう？」と双方を比較しちゃう",
-        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
+        "text": "買った人のレビューや周りの評判をとにかく調べる",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
       },
       {
-        "text": "「給料・ポジション・勤務地・仕事内容、気になる…」",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "text": "スペック・価格・保証を比較表にして検討する",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "「この業界いま伸びてるもんな、いいタイミングかも」",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "text": "「今買うのがいいタイミングか？」セール時期や新モデルの発表を気にする",
+        "scores": { "threeC": 0, "fourP": 1, "pest": 3, "swot": 0, "fiveForces": 0 }
       },
       {
-        "text": "「あの子の強みを活かせる環境ならいいな」と性格から考える",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 1 }
+        "text": "自分の生活に本当に必要かどうかをじっくり考える",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
       }
     ]
   },
   {
     "id": 6,
-    "question": "買い物中、気になる服を発見。購入までの思考は？",
-    "emoji": "👕",
+    "question": "仕事や学校でうまくいかないことがあったとき、最初に考えるのは？",
+    "emoji": "",
     "choices": [
       {
-        "text": "他のブランドの似たアイテムと比べてから決めたい",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 2 }
+        "text": "周りの人との関係性に問題がないか振り返る",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 2 }
       },
       {
-        "text": "値段・素材・着回し・手入れのしやすさを総合チェック",
+        "text": "やり方や手順のどこがまずかったか具体的に振り返る",
         "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "今シーズンのトレンドに合ってるかどうかが大事",
-        "scores": { "threeC": 0, "fourP": 1, "pest": 3, "swot": 0, "fiveForces": 0 }
+        "text": "自分だけの問題じゃなくて、環境やタイミングのせいもあるよなと考える",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "「このブランドって誰がよく着てるんだろう」とポジションが気になる",
-        "scores": { "threeC": 1, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 3 }
+        "text": "自分に足りなかったことと、できていたことを整理する",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
       }
     ]
   },
   {
     "id": 7,
-    "question": "友達と意見が食い違った！あなたの対処法は？",
-    "emoji": "💬",
+    "question": "旅行の計画を立てるとき、一番ワクワクするのは？",
+    "emoji": "",
     "choices": [
       {
-        "text": "お互いの立場と背景を理解してから折り合いを探す",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 1, "swot": 0, "fiveForces": 1 }
+        "text": "「誰と行くか」を決めるところ。メンバーで旅は決まる",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
       },
       {
-        "text": "何が問題で、具体的にどうすればいいかを論点整理する",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "text": "移動手段・宿・スケジュールをきっちり組むところ",
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "「そもそもなんでこうなったんだっけ？」と根本原因を遡る",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "text": "その土地ならではの体験や、今しか見れないものを探すところ",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "お互いの良いところ・譲れないところを出し合って調整する",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 1 }
+        "text": "予算と体力のバランスを考えて、無理のないプランにするところ",
+        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
       }
     ]
   },
   {
     "id": 8,
-    "question": "新しい趣味を始めたい！どうやって選ぶ？",
-    "emoji": "🎯",
+    "question": "初対面の人と話すとき、自然と気になるのは？",
+    "emoji": "",
     "choices": [
       {
-        "text": "友達や周りの人がやってることを参考にする",
-        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
+        "text": "共通の知り合いや、つながりがないか探してしまう",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 2 }
       },
       {
-        "text": "費用・必要な道具・通える場所・かかる時間で比較検討",
+        "text": "仕事の内容や住んでる場所など、プロフィール的な情報",
         "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "いま世の中で盛り上がってるものに乗っかりたい",
+        "text": "最近ハマってることや、世の中のことへの考え方",
         "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "自分の性格や体力的に続けられるかを考える",
+        "text": "どんな性格の人なのか、自分と合いそうかどうか",
         "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
       }
     ]
   },
   {
     "id": 9,
-    "question": "近所に新しいカフェがオープン。気になるポイントは？",
-    "emoji": "☕",
+    "question": "やるかやらないか迷ったとき、背中を押すのは？",
+    "emoji": "",
     "choices": [
       {
-        "text": "既にあるカフェと何が違うのか、差別化ポイントが気になる",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 2 }
+        "text": "「みんなもやってるし」「あの人もやってたし」という安心感",
+        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "メニュー・価格帯・内装の雰囲気・Wi-Fiの有無をチェック",
+        "text": "メリットとコストを冷静に比べて、得だと思えたら動く",
         "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "このエリア、最近お店が増えてきてるな…と街の変化に注目",
+        "text": "「今やらないと後悔しそう」というタイミングの感覚",
         "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "大手チェーンが近くにある中で個人店は大変そう…と心配になる",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 1, "swot": 0, "fiveForces": 3 }
+        "text": "「自分ならできる」という根拠のある自信",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
       }
     ]
   },
   {
     "id": 10,
-    "question": "最後の質問！あなたが人生の決断をするとき、一番頼りにするものは？",
-    "emoji": "🔮",
+    "question": "最後の質問！あなたの「頭の中の口ぐせ」に一番近いのは？",
+    "emoji": "",
     "choices": [
       {
-        "text": "周りの人の意見や、似た経験をした人の話",
+        "text": "「あの人はどう思ってるんだろう？」",
         "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
       },
       {
-        "text": "具体的な条件を並べて、一番合理的な選択肢を選ぶ",
+        "text": "「具体的にどうすればいいんだろう？」",
         "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
       },
       {
-        "text": "時代の流れや世の中の方向性を読んで判断する",
+        "text": "「これからどうなっていくんだろう？」",
         "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
       },
       {
-        "text": "自分の強み・弱みを把握した上で、一番成長できる道を選ぶ",
+        "text": "「自分にとってどうなんだろう？」",
         "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 1 }
       }
     ]

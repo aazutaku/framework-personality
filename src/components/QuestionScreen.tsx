@@ -23,7 +23,6 @@ export default function QuestionScreen({
       <div className="question-counter">
         Q{currentIndex + 1} / {totalQuestions}
       </div>
-      <div className="question-emoji">{question.emoji}</div>
       <h2 className="question-text">{question.question}</h2>
       <div className="choices">
         {question.choices.map((choice, index) => (
