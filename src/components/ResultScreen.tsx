@@ -1,4 +1,4 @@
-import type { FrameworkResult, FrameworkType } from '../data/types';
+import type { FrameworkResult, FrameworkType } from '@/data/types';
 
 interface ResultScreenProps {
   result: FrameworkResult;

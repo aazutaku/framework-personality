@@ -1,11 +1,12 @@
+'use client';
+
 import { useState, useCallback } from 'react';
-import StartScreen from './components/StartScreen';
-import QuestionScreen from './components/QuestionScreen';
-import ResultScreen from './components/ResultScreen';
-import type { FrameworkType, FrameworkResult, Question } from './data/types';
-import questionsData from './data/questions.json';
-import resultsData from './data/results.json';
-import './App.css';
+import StartScreen from '@/components/StartScreen';
+import QuestionScreen from '@/components/QuestionScreen';
+import ResultScreen from '@/components/ResultScreen';
+import type { FrameworkType, FrameworkResult, Question } from '@/data/types';
+import questionsData from '@/data/questions.json';
+import resultsData from '@/data/results.json';
 
 type Screen = 'start' | 'quiz' | 'result';
 
@@ -20,7 +21,7 @@ const initialScores: Record<FrameworkType, number> = {
   fiveForces: 0,
 };
 
-function App() {
+export default function Home() {
   const [screen, setScreen] = useState<Screen>('start');
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [scores, setScores] = useState<Record<FrameworkType, number>>({ ...initialScores });
@@ -96,5 +97,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
