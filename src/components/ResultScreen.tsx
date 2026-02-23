@@ -17,6 +17,7 @@ export default function ResultScreen({ result, scores, onRetry }: ResultScreenPr
     pest: 'PEST分析',
     swot: 'SWOT分析',
     fiveForces: '5フォース',
+    none: '規格外',
   };
 
   const handleShare = () => {

@@ -19,6 +19,7 @@ const initialScores: Record<FrameworkType, number> = {
   pest: 0,
   swot: 0,
   fiveForces: 0,
+  none: 0,
 };
 
 export default function Home() {

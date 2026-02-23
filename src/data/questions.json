@@ -6,19 +6,23 @@
     "choices": [
       {
         "text": "友達や恋人の予定を聞いてから自分の予定を合わせる",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "やりたいこと・行きたい場所・予算をリストアップして決める",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "天気とか季節感で「今日はこれだな」とノリで決める",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "疲れ具合や気分に合わせて、無理のない過ごし方を選ぶ",
-        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0, "none": 0 }
+      },
+      {
+        "text": "決めない。起きた瞬間の直感に全てを委ねる",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -29,19 +33,23 @@
     "choices": [
       {
         "text": "みんなの意見を聞いて、うまくまとめようとする",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "選択肢を整理して「こうしない？」と具体案を出す",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "「でもさ、こういう事情もあるよね」と視野を広げる一言を言う",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "誰が一番詳しいか・得意かを見て、その人に任せる",
-        "scores": { "threeC": 1, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 3 }
+        "scores": { "threeC": 1, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 3, "none": 0 }
+      },
+      {
+        "text": "正直どっちでもいい。「任せる〜」と言いがち",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -52,19 +60,23 @@
     "choices": [
       {
         "text": "「相手はどう思ってるの？」と周りの状況を聞く",
-        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "「で、具体的にどうしたいの？」とゴールを確認する",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "「そもそもなんでそうなったの？」と経緯を聞きたくなる",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "「あなたはどうしたいの？」と本人の気持ちを聞く",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0, "none": 0 }
+      },
+      {
+        "text": "とりあえず「わかる〜」と共感しておく",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -75,19 +87,23 @@
     "choices": [
       {
         "text": "友達のおすすめや「あそこ良かったよ」の口コミ",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "メニュー・価格・場所・営業時間を調べて比較する",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "SNSで話題になってるかどうか、今の人気度",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "自分の好みに合いそうかどうか、直感と過去の経験",
-        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0, "none": 0 }
+      },
+      {
+        "text": "目の前にあった店にふらっと入る。調べるのが面倒",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -98,19 +114,23 @@
     "choices": [
       {
         "text": "買った人のレビューや周りの評判をとにかく調べる",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "スペック・価格・保証を比較表にして検討する",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
-        "text": "「今買うのがいいタイミングか？」セール時期や新モデルの発表を気にする",
-        "scores": { "threeC": 0, "fourP": 1, "pest": 3, "swot": 0, "fiveForces": 0 }
+        "text": "「今買うのがいいタイミングか？」セール時期や新モデルを気にする",
+        "scores": { "threeC": 0, "fourP": 1, "pest": 3, "swot": 0, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "自分の生活に本当に必要かどうかをじっくり考える",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0, "none": 0 }
+      },
+      {
+        "text": "ピンときたら買う。悩んでる時間がもったいない",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -121,19 +141,23 @@
     "choices": [
       {
         "text": "周りの人との関係性に問題がないか振り返る",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 2 }
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 2, "none": 0 }
       },
       {
         "text": "やり方や手順のどこがまずかったか具体的に振り返る",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "自分だけの問題じゃなくて、環境やタイミングのせいもあるよなと考える",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "自分に足りなかったことと、できていたことを整理する",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0, "none": 0 }
+      },
+      {
+        "text": "まあそういう日もあるよね、と切り替えて寝る",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -143,20 +167,24 @@
     "emoji": "",
     "choices": [
       {
-        "text": "「誰と行くか」を決めるところ。メンバーで旅は決まる",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
+        "text": "「誰と行くか」を決めるところ。メンバーで旅は変わる",
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "移動手段・宿・スケジュールをきっちり組むところ",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "その土地ならではの体験や、今しか見れないものを探すところ",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "予算と体力のバランスを考えて、無理のないプランにするところ",
-        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 1, "pest": 0, "swot": 3, "fiveForces": 0, "none": 0 }
+      },
+      {
+        "text": "計画とか立てない。現地で気の向くままに動きたい",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -167,19 +195,23 @@
     "choices": [
       {
         "text": "共通の知り合いや、つながりがないか探してしまう",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 2 }
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 2, "none": 0 }
       },
       {
         "text": "仕事の内容や住んでる場所など、プロフィール的な情報",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "最近ハマってることや、世の中のことへの考え方",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "どんな性格の人なのか、自分と合いそうかどうか",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0, "none": 0 }
+      },
+      {
+        "text": "特に何も。話してれば自然とわかるでしょ",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -190,19 +222,23 @@
     "choices": [
       {
         "text": "「みんなもやってるし」「あの人もやってたし」という安心感",
-        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 3, "fourP": 1, "pest": 0, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "メリットとコストを冷静に比べて、得だと思えたら動く",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "「今やらないと後悔しそう」というタイミングの感覚",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "「自分ならできる」という根拠のある自信",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 0, "none": 0 }
+      },
+      {
+        "text": "迷ってる時点でやりたいってこと。考える前に動く",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   },
@@ -213,19 +249,23 @@
     "choices": [
       {
         "text": "「あの人はどう思ってるんだろう？」",
-        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1 }
+        "scores": { "threeC": 3, "fourP": 0, "pest": 0, "swot": 1, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "「具体的にどうすればいいんだろう？」",
-        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0 }
+        "scores": { "threeC": 0, "fourP": 3, "pest": 0, "swot": 1, "fiveForces": 0, "none": 0 }
       },
       {
         "text": "「これからどうなっていくんだろう？」",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 3, "swot": 0, "fiveForces": 1, "none": 0 }
       },
       {
         "text": "「自分にとってどうなんだろう？」",
-        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 1 }
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 3, "fiveForces": 1, "none": 0 }
+      },
+      {
+        "text": "「まあなんとかなるっしょ」",
+        "scores": { "threeC": 0, "fourP": 0, "pest": 0, "swot": 0, "fiveForces": 0, "none": 3 }
       }
     ]
   }

@@ -1,4 +1,4 @@
-export type FrameworkType = 'threeC' | 'fourP' | 'pest' | 'swot' | 'fiveForces';
+export type FrameworkType = 'threeC' | 'fourP' | 'pest' | 'swot' | 'fiveForces' | 'none';
 
 export interface Choice {
   text: string;
