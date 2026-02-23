@@ -1,9 +1,14 @@
+import { useMemo } from 'react';
 import type { FrameworkResult, FrameworkType } from '@/data/types';
 
 interface ResultScreenProps {
   result: FrameworkResult;
   scores: Record<FrameworkType, number>;
   onRetry: () => void;
+}
+
+function pickRandom<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export default function ResultScreen({ result, scores, onRetry }: ResultScreenProps) {
@@ -19,6 +24,9 @@ export default function ResultScreen({ result, scores, onRetry }: ResultScreenPr
     fiveForces: '5フォース',
     none: '規格外',
   };
+
+  const drinkingAdvice = useMemo(() => pickRandom(result.drinkingAdvices), [result]);
+  const drinkingCommand = useMemo(() => pickRandom(result.drinkingCommands), [result]);
 
   const handleShare = () => {
     const text = `【フレームワーク性格診断】\n私は「${result.name}」${result.subtitle}でした！\n${result.emoji}\n\n${result.description.slice(0, 60)}…\n\n#フレームワーク性格診断 #分析FW診断`;
@@ -46,7 +54,7 @@ export default function ResultScreen({ result, scores, onRetry }: ResultScreenPr
       </div>
 
       <div className="result-card">
-        <h3 className="card-title">🧬 あなたの特徴</h3>
+        <h3 className="card-title">あなたの特徴</h3>
         <ul className="traits-list">
           {result.traits.map((trait, i) => (
             <li key={i}>{trait}</li>
@@ -55,23 +63,28 @@ export default function ResultScreen({ result, scores, onRetry }: ResultScreenPr
       </div>
 
       <div className="result-card warning-card">
-        <h3 className="card-title">⚠️ 弱点</h3>
+        <h3 className="card-title">弱点</h3>
         <p>{result.weakness}</p>
       </div>
 
       <div className="result-card drinking-card">
-        <h3 className="card-title">🍻 飲み会での注意事項</h3>
-        <p>{result.drinkingAdvice}</p>
+        <h3 className="card-title">飲み会での注意事項</h3>
+        <p>{drinkingAdvice}</p>
+      </div>
+
+      <div className="result-card command-card">
+        <h3 className="card-title">今日の飲み会の指令</h3>
+        <p>{drinkingCommand}</p>
       </div>
 
       <div className="result-card">
-        <h3 className="card-title">💑 相性</h3>
-        <p className="compat-good">✅ ベスト: {result.compatibility.best}</p>
-        <p className="compat-bad">❌ ワースト: {result.compatibility.worst}</p>
+        <h3 className="card-title">相性</h3>
+        <p className="compat-good">ベスト: {result.compatibility.best}</p>
+        <p className="compat-bad">ワースト: {result.compatibility.worst}</p>
       </div>
 
       <div className="result-card">
-        <h3 className="card-title">📊 スコア分布</h3>
+        <h3 className="card-title">スコア分布</h3>
         <div className="score-chart">
           {sortedScores.map(([type, score]) => (
             <div key={type} className="score-row">
@@ -90,7 +103,7 @@ export default function ResultScreen({ result, scores, onRetry }: ResultScreenPr
 
       <div className="result-actions">
         <button className="share-button" onClick={handleShare}>
-          結果をシェア 📤
+          結果をシェア
         </button>
         <button className="retry-button" onClick={onRetry}>
           もう一度診断する

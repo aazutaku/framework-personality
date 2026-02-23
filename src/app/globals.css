@@ -351,6 +351,18 @@ ul {
   color: var(--text-secondary);
 }
 
+.command-card {
+  border-color: rgba(248, 113, 113, 0.3);
+  background: rgba(248, 113, 113, 0.08);
+}
+
+.command-card p {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
 .compat-good {
   font-size: 14px;
   line-height: 1.7;

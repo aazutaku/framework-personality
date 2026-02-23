@@ -20,7 +20,8 @@ export interface FrameworkResult {
   description: string;
   traits: string[];
   weakness: string;
-  drinkingAdvice: string;
+  drinkingAdvices: string[];
+  drinkingCommands: string[];
   compatibility: {
     best: string;
     worst: string;
