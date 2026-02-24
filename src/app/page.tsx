@@ -22,16 +22,69 @@ const initialScores: Record<FrameworkType, number> = {
   none: 0,
 };
 
+interface FoamBlob {
+  id: number;
+  left: number;
+  size: number;
+  delay: number;
+  layer: number;
+}
+
+interface Bubble {
+  id: number;
+  left: number;
+  size: number;
+  delay: number;
+  duration: number;
+  wobble: number;
+}
+
 function FoamOverlay() {
-  const [bubbles, setBubbles] = useState<{ id: number; left: number; size: number; delay: number; duration: number }[]>([]);
+  const [foamBlobs, setFoamBlobs] = useState<FoamBlob[]>([]);
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
   useEffect(() => {
-    const b = Array.from({ length: 20 }, (_, i) => ({
+    // 3層の泡ブロブ（奥→手前で大きく）
+    const blobs: FoamBlob[] = [];
+    // 奥の層: 小さめ、密に
+    for (let i = 0; i < 14; i++) {
+      blobs.push({
+        id: i,
+        left: -5 + (i / 13) * 110,
+        size: 50 + Math.random() * 30,
+        delay: Math.random() * 0.3,
+        layer: 0,
+      });
+    }
+    // 中間層
+    for (let i = 0; i < 10; i++) {
+      blobs.push({
+        id: 100 + i,
+        left: -5 + (i / 9) * 110,
+        size: 55 + Math.random() * 35,
+        delay: Math.random() * 0.3 + 0.05,
+        layer: 1,
+      });
+    }
+    // 手前の層: 大きく、少なめ
+    for (let i = 0; i < 8; i++) {
+      blobs.push({
+        id: 200 + i,
+        left: -5 + (i / 7) * 110,
+        size: 60 + Math.random() * 40,
+        delay: Math.random() * 0.3 + 0.1,
+        layer: 2,
+      });
+    }
+    setFoamBlobs(blobs);
+
+    const b = Array.from({ length: 30 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
-      size: 4 + Math.random() * 12,
-      delay: Math.random() * 1.2,
-      duration: 1.5 + Math.random() * 1.5,
+      size: 3 + Math.random() * 10,
+      delay: Math.random() * 1.4,
+      duration: 1.2 + Math.random() * 1.8,
+      wobble: -15 + Math.random() * 30,
     }));
     setBubbles(b);
   }, []);
@@ -39,7 +92,6 @@ function FoamOverlay() {
   return (
     <div className="foam-overlay">
       <div className="foam-beer">
-        <div className="foam-layer" />
         {bubbles.map((b) => (
           <div
             key={b.id}
@@ -51,9 +103,24 @@ function FoamOverlay() {
               height: `${b.size}px`,
               animationDelay: `${b.delay}s`,
               animationDuration: `${b.duration}s`,
+              ['--wobble' as string]: `${b.wobble}px`,
             }}
           />
         ))}
+        <div className="foam-head">
+          {foamBlobs.map((blob) => (
+            <div
+              key={blob.id}
+              className={`foam-blob foam-blob-layer${blob.layer}`}
+              style={{
+                left: `${blob.left}%`,
+                width: `${blob.size}px`,
+                height: `${blob.size}px`,
+                animationDelay: `${blob.delay}s`,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
