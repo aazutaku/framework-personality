@@ -7,16 +7,16 @@
 }
 
 :root {
-  --bg-primary: #0f0c29;
-  --bg-secondary: #302b63;
-  --bg-tertiary: #24243e;
-  --accent: #667eea;
-  --accent-light: #764ba2;
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.75);
-  --text-muted: rgba(255, 255, 255, 0.5);
-  --card-bg: rgba(255, 255, 255, 0.08);
-  --card-border: rgba(255, 255, 255, 0.12);
+  --bg-primary: #1a0e00;
+  --bg-secondary: #2d1800;
+  --bg-tertiary: #1a1000;
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --text-primary: #fef3c7;
+  --text-secondary: rgba(254, 243, 199, 0.75);
+  --text-muted: rgba(254, 243, 199, 0.45);
+  --card-bg: rgba(245, 158, 11, 0.08);
+  --card-border: rgba(245, 158, 11, 0.2);
   --success: #4ade80;
   --warning: #fbbf24;
   --danger: #f87171;
@@ -30,7 +30,7 @@
 
 body {
   min-height: 100dvh;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -59,6 +59,86 @@ ul {
   margin: 0 auto;
   padding: 20px 16px;
   padding-bottom: env(safe-area-inset-bottom, 20px);
+  position: relative;
+}
+
+/* ===== Foam Intro Animation ===== */
+.foam-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Beer fills from bottom */
+.foam-beer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(0deg, #c87400 0%, #e8a000 40%, #f0b020 100%);
+  animation: beerFill 1.2s ease-out forwards;
+}
+
+@keyframes beerFill {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+
+/* Foam layer on top of beer */
+.foam-layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 120px;
+  background:
+    radial-gradient(ellipse 60px 50px at 10% 80%, #fff9eb 60%, transparent 61%),
+    radial-gradient(ellipse 70px 55px at 30% 70%, #fffdf5 60%, transparent 61%),
+    radial-gradient(ellipse 55px 50px at 50% 85%, #fff9eb 60%, transparent 61%),
+    radial-gradient(ellipse 65px 50px at 70% 75%, #fffdf5 60%, transparent 61%),
+    radial-gradient(ellipse 60px 55px at 90% 80%, #fff9eb 60%, transparent 61%),
+    radial-gradient(ellipse 80px 60px at 20% 60%, #fffdf5 60%, transparent 61%),
+    radial-gradient(ellipse 75px 55px at 55% 55%, #fff9eb 60%, transparent 61%),
+    radial-gradient(ellipse 70px 60px at 80% 65%, #fffdf5 60%, transparent 61%);
+  filter: blur(2px);
+}
+
+/* Whole overlay drains away */
+.foam-overlay {
+  animation: foamDrain 0.8s ease-in 1.8s forwards;
+}
+
+@keyframes foamDrain {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Bubbles rising in the beer */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  animation: bubbleRise linear forwards;
+}
+
+@keyframes bubbleRise {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  80% { opacity: 0.4; }
+  100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
+
+/* Content reveals after foam */
+.app-content {
+  opacity: 0;
+  animation: contentReveal 0.6s ease-out 2.2s forwards;
+}
+
+@keyframes contentReveal {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== Transitions ===== */
@@ -101,7 +181,7 @@ ul {
   font-size: 32px;
   font-weight: 800;
   line-height: 1.3;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -137,18 +217,18 @@ ul {
   max-width: 280px;
   padding: 16px 32px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #1a0e00;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  box-shadow: 0 4px 24px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 24px rgba(245, 158, 11, 0.4);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .start-button:active {
   transform: scale(0.96);
-  box-shadow: 0 2px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 2px 12px rgba(245, 158, 11, 0.3);
 }
 
 .start-note {
@@ -172,7 +252,7 @@ ul {
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #f59e0b, #d97706);
   border-radius: 2px;
   transition: width 0.4s ease;
 }
@@ -224,7 +304,7 @@ ul {
 }
 
 .choice-button:active {
-  background: rgba(102, 126, 234, 0.2);
+  background: rgba(245, 158, 11, 0.2);
   border-color: var(--accent);
   transform: scale(0.98);
 }
@@ -237,8 +317,8 @@ ul {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #1a0e00;
   font-size: 13px;
   font-weight: 700;
   margin-top: 1px;
@@ -275,7 +355,7 @@ ul {
 .result-name {
   font-size: 28px;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -341,8 +421,8 @@ ul {
 }
 
 .drinking-card {
-  border-color: rgba(102, 126, 234, 0.3);
-  background: rgba(102, 126, 234, 0.08);
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.1);
 }
 
 .drinking-card p {
@@ -401,21 +481,21 @@ ul {
 .score-bar-container {
   flex: 1;
   height: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(254, 243, 199, 0.05);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .score-bar {
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(254, 243, 199, 0.15);
   border-radius: 10px;
   transition: width 0.8s ease;
   min-width: 4px;
 }
 
 .score-bar-primary {
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #f59e0b, #d97706);
 }
 
 .score-value {
@@ -439,18 +519,18 @@ ul {
   width: 100%;
   padding: 16px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #1a0e00;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.03em;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.35);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .share-button:active {
   transform: scale(0.97);
-  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.25);
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.25);
 }
 
 .retry-button {

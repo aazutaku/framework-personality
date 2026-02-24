@@ -5,16 +5,16 @@ interface StartScreenProps {
 export default function StartScreen({ onStart }: StartScreenProps) {
   return (
     <div className="start-screen">
-      <div className="start-icon">📐</div>
+      <div className="start-icon">🍺</div>
       <h1 className="start-title">
         フレームワーク
         <br />
-        性格診断
+        飲み会診断
       </h1>
       <p className="start-subtitle">
-        あなたが無意識に使ってしまう
+        あなたの思考のクセから
         <br />
-        分析フレームワークはどれ？
+        飲み会での振る舞いが丸わかり！
       </p>
       <div className="start-frameworks">
         <span className="fw-tag">3C</span>
