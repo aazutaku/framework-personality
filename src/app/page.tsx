@@ -316,9 +316,13 @@ export default function Home() {
         setCurrentQuestion(currentQuestion + 1);
       });
     } else {
-      const topType = (Object.entries(newScores) as [FrameworkType, number][])
-        .sort(([, a], [, b]) => b - a)[0][0];
-      const matchedResult = results.find((r) => r.type === topType)!;
+      const sortedTypes = (Object.entries(newScores) as [FrameworkType, number][])
+        .sort(([, a], [, b]) => b - a);
+      const topType = sortedTypes[0][0];
+      const secondType = sortedTypes[1][0];
+      const matchedResult =
+        results.find((r) => r.type === topType && r.secondaryTypes.includes(secondType)) ||
+        results.find((r) => r.type === topType)!;
       transition(() => {
         setResult(matchedResult);
         setScreen('result');

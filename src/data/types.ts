@@ -14,6 +14,7 @@ export interface Question {
 
 export interface FrameworkResult {
   type: FrameworkType;
+  secondaryTypes: FrameworkType[];
   name: string;
   subtitle: string;
   emoji: string;
