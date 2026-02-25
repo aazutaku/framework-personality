@@ -69,12 +69,6 @@ ul {
   z-index: 100;
   pointer-events: none;
   overflow: hidden;
-  animation: foamDrain 0.7s ease-in 2.0s forwards;
-}
-
-@keyframes foamDrain {
-  0% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
 }
 
 /* Beer fills from bottom */
@@ -92,7 +86,7 @@ ul {
     #eaa010 80%,
     #f0b830 100%
   );
-  animation: beerFill 1.0s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: beerFill 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes beerFill {
@@ -100,89 +94,72 @@ ul {
   100% { height: 100%; }
 }
 
-/* Foam head: contains all blob layers */
+/* Foam head: contains all blobs, tall enough to overflow screen */
 .foam-head {
   position: absolute;
   left: -10%;
   right: -10%;
   bottom: 100%;
-  height: 200px;
+  height: 800px;
 }
 
-/* Individual foam blobs */
+/* Individual foam blob (small circles packed together) */
 .foam-blob {
   position: absolute;
-  bottom: 0;
   border-radius: 50%;
-  animation: blobAppear 0.5s ease-out both;
-}
-
-.foam-blob-layer0 {
-  background: radial-gradient(
-    ellipse at 40% 35%,
-    #fffef8 0%,
-    #f5edd4 40%,
-    #ece0c0 70%,
-    #e0d4b0 100%
-  );
-  opacity: 0.85;
-  z-index: 1;
-}
-
-.foam-blob-layer1 {
+  opacity: 0;
+  animation: blobPop 0.35s ease-out both;
   background: radial-gradient(
     ellipse at 35% 30%,
     #ffffff 0%,
-    #fef9ea 35%,
-    #f5ecd0 65%,
-    #ece0bc 100%
-  );
-  opacity: 0.92;
-  z-index: 2;
-  animation-name: blobAppear, blobWobble;
-  animation-duration: 0.5s, 2.5s;
-  animation-timing-function: ease-out, ease-in-out;
-  animation-fill-mode: both, none;
-  animation-iteration-count: 1, infinite;
-}
-
-.foam-blob-layer2 {
-  background: radial-gradient(
-    ellipse at 30% 25%,
-    #ffffff 0%,
-    #fffdf5 30%,
-    #fef6e0 60%,
-    #f5ecd0 100%
+    #fffef8 25%,
+    #faf3e0 55%,
+    #f0e6c8 100%
   );
   box-shadow:
-    inset -4px -4px 12px rgba(200, 180, 130, 0.15),
-    inset 3px 3px 8px rgba(255, 255, 255, 0.6),
-    0 2px 8px rgba(0, 0, 0, 0.06);
-  z-index: 3;
-  animation-name: blobAppear, blobWobble2;
-  animation-duration: 0.5s, 3s;
-  animation-timing-function: ease-out, ease-in-out;
-  animation-fill-mode: both, none;
-  animation-iteration-count: 1, infinite;
+    inset -2px -2px 6px rgba(180, 160, 110, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.7);
 }
 
-@keyframes blobAppear {
-  0% { transform: scale(0) translateY(30px); opacity: 0; }
-  60% { transform: scale(1.1) translateY(-5px); }
-  100% { transform: scale(1) translateY(0); opacity: 1; }
+@keyframes blobPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.93;
+  }
 }
 
-@keyframes blobWobble {
-  0%, 100% { transform: translateY(0) scaleX(1); }
-  25% { transform: translateY(-3px) scaleX(1.03); }
-  50% { transform: translateY(2px) scaleX(0.97); }
-  75% { transform: translateY(-2px) scaleX(1.02); }
+/* White-out: after foam fills, screen goes white then fades */
+.foam-whiteout {
+  position: absolute;
+  inset: 0;
+  background: #faf5e8;
+  opacity: 0;
+  animation: whiteFlash 2.4s ease forwards;
+  animation-delay: 0.6s;
 }
 
-@keyframes blobWobble2 {
-  0%, 100% { transform: translateY(0) scaleX(1) rotate(0deg); }
-  33% { transform: translateY(-4px) scaleX(1.04) rotate(1deg); }
-  66% { transform: translateY(2px) scaleX(0.96) rotate(-1deg); }
+@keyframes whiteFlash {
+  0% { opacity: 0; }
+  40% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Hide entire overlay after animation completes */
+.foam-overlay {
+  animation: overlayHide 0.01s linear 3.4s forwards;
+}
+
+@keyframes overlayHide {
+  to { visibility: hidden; }
 }
 
 /* Bubbles rising in the beer */
@@ -195,37 +172,37 @@ ul {
     rgba(255, 255, 255, 0.2) 40%,
     rgba(255, 255, 255, 0.05) 100%
   );
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   animation: bubbleRise linear forwards;
 }
 
 @keyframes bubbleRise {
   0% {
-    transform: translateY(0) translateX(0) scale(0.6);
+    transform: translateY(0) translateX(0) scale(0.5);
     opacity: 0;
   }
   10% {
-    opacity: 0.7;
-    transform: translateY(-10vh) translateX(var(--wobble, 0px)) scale(0.8);
+    opacity: 0.6;
+    transform: translateY(-10vh) translateX(var(--wobble, 0px)) scale(0.7);
   }
   50% {
-    opacity: 0.5;
-    transform: translateY(-50vh) translateX(calc(var(--wobble, 0px) * -0.5)) scale(1);
+    opacity: 0.4;
+    transform: translateY(-50vh) translateX(calc(var(--wobble, 0px) * -0.5)) scale(0.9);
   }
   100% {
-    transform: translateY(-105vh) translateX(var(--wobble, 0px)) scale(1.1);
+    transform: translateY(-105vh) translateX(var(--wobble, 0px)) scale(1);
     opacity: 0;
   }
 }
 
-/* Content reveals after foam */
+/* Content reveals after foam whiteout fades */
 .app-content {
   opacity: 0;
-  animation: contentReveal 0.6s ease-out 2.3s forwards;
+  animation: contentReveal 0.8s ease-out 2.8s forwards;
 }
 
 @keyframes contentReveal {
-  0% { opacity: 0; transform: translateY(10px); }
+  0% { opacity: 0; transform: translateY(12px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 

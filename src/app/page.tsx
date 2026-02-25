@@ -24,10 +24,10 @@ const initialScores: Record<FrameworkType, number> = {
 
 interface FoamBlob {
   id: number;
-  left: number;
+  x: number;
+  y: number;
   size: number;
   delay: number;
-  layer: number;
 }
 
 interface Bubble {
@@ -44,47 +44,47 @@ function FoamOverlay() {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
   useEffect(() => {
-    // 3層の泡ブロブ（奥→手前で大きく）
+    // 細かい泡を大量生成（画面を埋め尽くす）
     const blobs: FoamBlob[] = [];
-    // 奥の層: 小さめ、密に
-    for (let i = 0; i < 14; i++) {
-      blobs.push({
-        id: i,
-        left: -5 + (i / 13) * 110,
-        size: 50 + Math.random() * 30,
-        delay: Math.random() * 0.3,
-        layer: 0,
-      });
+    let id = 0;
+
+    // 泡の頭部分（ビールの上に乗る厚い層）: 6行 x 密に配置
+    for (let row = 0; row < 6; row++) {
+      const count = 12 + Math.floor(Math.random() * 4);
+      for (let col = 0; col < count; col++) {
+        blobs.push({
+          id: id++,
+          x: -8 + (col / (count - 1)) * 116 + (Math.random() - 0.5) * 10,
+          y: row * 22 + Math.random() * 12,
+          size: 28 + Math.random() * 22,
+          delay: row * 0.04 + Math.random() * 0.08,
+        });
+      }
     }
-    // 中間層
-    for (let i = 0; i < 10; i++) {
-      blobs.push({
-        id: 100 + i,
-        left: -5 + (i / 9) * 110,
-        size: 55 + Math.random() * 35,
-        delay: Math.random() * 0.3 + 0.05,
-        layer: 1,
-      });
+
+    // 溢れ出す泡（画面上部まで広がる）: さらに上に積み重ね
+    for (let row = 6; row < 30; row++) {
+      const count = 10 + Math.floor(Math.random() * 6);
+      for (let col = 0; col < count; col++) {
+        blobs.push({
+          id: id++,
+          x: -8 + (col / (count - 1)) * 116 + (Math.random() - 0.5) * 14,
+          y: row * 22 + Math.random() * 14,
+          size: 30 + Math.random() * 28,
+          delay: 0.3 + row * 0.02 + Math.random() * 0.06,
+        });
+      }
     }
-    // 手前の層: 大きく、少なめ
-    for (let i = 0; i < 8; i++) {
-      blobs.push({
-        id: 200 + i,
-        left: -5 + (i / 7) * 110,
-        size: 60 + Math.random() * 40,
-        delay: Math.random() * 0.3 + 0.1,
-        layer: 2,
-      });
-    }
+
     setFoamBlobs(blobs);
 
-    const b = Array.from({ length: 30 }, (_, i) => ({
+    const b = Array.from({ length: 35 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
-      size: 3 + Math.random() * 10,
-      delay: Math.random() * 1.4,
-      duration: 1.2 + Math.random() * 1.8,
-      wobble: -15 + Math.random() * 30,
+      size: 2 + Math.random() * 8,
+      delay: Math.random() * 1.0,
+      duration: 0.8 + Math.random() * 1.2,
+      wobble: -12 + Math.random() * 24,
     }));
     setBubbles(b);
   }, []);
@@ -111,9 +111,10 @@ function FoamOverlay() {
           {foamBlobs.map((blob) => (
             <div
               key={blob.id}
-              className={`foam-blob foam-blob-layer${blob.layer}`}
+              className="foam-blob"
               style={{
-                left: `${blob.left}%`,
+                left: `${blob.x}%`,
+                bottom: `${blob.y}px`,
                 width: `${blob.size}px`,
                 height: `${blob.size}px`,
                 animationDelay: `${blob.delay}s`,
@@ -122,6 +123,7 @@ function FoamOverlay() {
           ))}
         </div>
       </div>
+      <div className="foam-whiteout" />
     </div>
   );
 }
@@ -135,7 +137,7 @@ export default function Home() {
   const [showFoam, setShowFoam] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowFoam(false), 3200);
+    const timer = setTimeout(() => setShowFoam(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 
