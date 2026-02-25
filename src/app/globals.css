@@ -14,9 +14,9 @@
   --accent-light: #fbbf24;
   --text-primary: #fef3c7;
   --text-secondary: rgba(254, 243, 199, 0.75);
-  --text-muted: rgba(254, 243, 199, 0.45);
-  --card-bg: rgba(245, 158, 11, 0.08);
-  --card-border: rgba(245, 158, 11, 0.2);
+  --text-muted: rgba(254, 243, 199, 0.6);
+  --card-bg: rgba(245, 158, 11, 0.12);
+  --card-border: rgba(245, 158, 11, 0.3);
   --success: #4ade80;
   --warning: #fbbf24;
   --danger: #f87171;
@@ -67,6 +67,7 @@ ul {
   padding: 20px 16px;
   padding-bottom: env(safe-area-inset-bottom, 20px);
   position: relative;
+  background: rgba(26, 14, 0, 0.55);
 }
 
 /* ===== Foam Intro Animation ===== */
@@ -681,14 +682,14 @@ ul {
 .score-bar-container {
   flex: 1;
   height: 20px;
-  background: rgba(254, 243, 199, 0.05);
+  background: rgba(254, 243, 199, 0.08);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .score-bar {
   height: 100%;
-  background: rgba(254, 243, 199, 0.15);
+  background: rgba(254, 243, 199, 0.22);
   border-radius: 10px;
   transition: width 0.8s ease;
   min-width: 4px;
