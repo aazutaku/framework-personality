@@ -331,27 +331,14 @@ ul {
   opacity: 0;
 }
 
-/* Hide overlay after done */
+/* Hide overlay after done (opacity のみ。visibility 切替によるちらつきを排除) */
 .foam-overlay {
-  animation: overlayDone 1.5s cubic-bezier(0.4, 0, 0.2, 1) 4.5s forwards;
+  animation: overlayDone 1.8s cubic-bezier(0.4, 0, 0.2, 1) 4.2s forwards;
 }
 
 @keyframes overlayDone {
   0% { opacity: 1; }
-  99% { opacity: 0; visibility: visible; }
-  100% { opacity: 0; visibility: hidden; }
-}
-
-/* ---- Content reveal ---- */
-/* オーバーレイの下で先に表示完了させ、overlayが消える頃にはもう見えている */
-.app-content {
-  opacity: 0;
-  animation: contentReveal 1.0s cubic-bezier(0.4, 0, 0.2, 1) 3.5s forwards;
-}
-
-@keyframes contentReveal {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; pointer-events: none; }
 }
 
 /* ===== Transitions ===== */

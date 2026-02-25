@@ -284,12 +284,6 @@ export default function Home() {
   const [scores, setScores] = useState<Record<FrameworkType, number>>({ ...initialScores });
   const [result, setResult] = useState<FrameworkResult | null>(null);
   const [fadeClass, setFadeClass] = useState('fade-in');
-  const [showFoam, setShowFoam] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowFoam(false), 7000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const transition = useCallback((callback: () => void) => {
     setFadeClass('fade-out');
@@ -344,7 +338,7 @@ export default function Home() {
   return (
     <>
       <CarbonationBubbles />
-      {showFoam && <FoamOverlay />}
+      <FoamOverlay />
       <div className="app">
         <div className={`app-content screen-container ${fadeClass}`}>
           {screen === 'start' && <StartScreen onStart={handleStart} />}
