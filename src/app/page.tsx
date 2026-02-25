@@ -41,6 +41,8 @@ interface FoamDrip {
   variant: number;
   opacity: number;
   stretch: number;
+  blur: number;
+  kind: 'blob' | 'stream';
 }
 
 function FoamOverlay() {
@@ -59,50 +61,78 @@ function FoamOverlay() {
     }));
     setBubbles(b);
 
-    // 上から溢れ落ちてくる細かい白泡（3段階のサイズ）
+    // 上から溢れ落ちてくるクリーミーな白泡
     const drips: FoamDrip[] = [];
-    // 小さい泡（細かい質感）
-    for (let i = 0; i < 80; i++) {
+    let id = 0;
+
+    // クリームの流れ（太い帯状の泡が流れ落ちる）
+    for (let i = 0; i < 18; i++) {
       drips.push({
-        id: i,
+        id: id++,
         left: Math.random() * 100,
-        size: 4 + Math.random() * 7,
-        delay: 0.7 + Math.random() * 1.2,
-        duration: 0.6 + Math.random() * 1.0,
-        wobble: -20 + Math.random() * 40,
+        size: 30 + Math.random() * 40,
+        delay: 0.6 + Math.random() * 0.8,
+        duration: 1.8 + Math.random() * 1.2,
+        wobble: -8 + Math.random() * 16,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.6 + Math.random() * 0.4,
-        stretch: 1.0 + Math.random() * 0.5,
+        opacity: 0.7 + Math.random() * 0.3,
+        stretch: 2.5 + Math.random() * 2.0,
+        blur: 6 + Math.random() * 8,
+        kind: 'stream',
       });
     }
-    // 中くらいの泡
-    for (let i = 80; i < 150; i++) {
+
+    // 大きめのクリーミーな塊（ぼかし強め）
+    for (let i = 0; i < 40; i++) {
       drips.push({
-        id: i,
+        id: id++,
         left: Math.random() * 100,
-        size: 10 + Math.random() * 14,
-        delay: 0.8 + Math.random() * 0.9,
-        duration: 0.8 + Math.random() * 1.2,
-        wobble: -15 + Math.random() * 30,
-        variant: Math.floor(Math.random() * 3),
-        opacity: 0.75 + Math.random() * 0.25,
-        stretch: 1.2 + Math.random() * 0.8,
-      });
-    }
-    // 大きい泡（厚みのある塊）
-    for (let i = 150; i < 180; i++) {
-      drips.push({
-        id: i,
-        left: Math.random() * 100,
-        size: 22 + Math.random() * 16,
-        delay: 0.9 + Math.random() * 0.6,
-        duration: 1.2 + Math.random() * 1.0,
+        size: 20 + Math.random() * 25,
+        delay: 0.7 + Math.random() * 1.0,
+        duration: 1.4 + Math.random() * 1.2,
         wobble: -10 + Math.random() * 20,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.85 + Math.random() * 0.15,
-        stretch: 1.5 + Math.random() * 1.0,
+        opacity: 0.75 + Math.random() * 0.25,
+        stretch: 1.5 + Math.random() * 1.5,
+        blur: 4 + Math.random() * 6,
+        kind: 'blob',
       });
     }
+
+    // 中くらいの泡（ソフトフォーカス）
+    for (let i = 0; i < 60; i++) {
+      drips.push({
+        id: id++,
+        left: Math.random() * 100,
+        size: 10 + Math.random() * 14,
+        delay: 0.8 + Math.random() * 1.0,
+        duration: 1.0 + Math.random() * 1.2,
+        wobble: -12 + Math.random() * 24,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.7 + Math.random() * 0.3,
+        stretch: 1.2 + Math.random() * 1.0,
+        blur: 2 + Math.random() * 4,
+        kind: 'blob',
+      });
+    }
+
+    // 細かい泡（ディテール用、ぼかし少なめ）
+    for (let i = 0; i < 50; i++) {
+      drips.push({
+        id: id++,
+        left: Math.random() * 100,
+        size: 5 + Math.random() * 8,
+        delay: 0.7 + Math.random() * 1.3,
+        duration: 0.8 + Math.random() * 1.0,
+        wobble: -15 + Math.random() * 30,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.5 + Math.random() * 0.4,
+        stretch: 1.0 + Math.random() * 0.6,
+        blur: 1 + Math.random() * 2,
+        kind: 'blob',
+      });
+    }
+
     setFoamDrips(drips);
   }, []);
 
@@ -129,13 +159,14 @@ function FoamOverlay() {
         {foamDrips.map((d) => (
           <div
             key={d.id}
-            className={`foam-drip foam-drip-v${d.variant}`}
+            className={`foam-drip foam-drip-v${d.variant} ${d.kind === 'stream' ? 'foam-stream' : ''}`}
             style={{
               left: `${d.left}%`,
               width: `${d.size}px`,
               height: `${d.size}px`,
               animationDelay: `${d.delay}s`,
               animationDuration: `${d.duration}s`,
+              filter: `blur(${d.blur}px)`,
               ['--drip-wobble' as string]: `${d.wobble}px`,
               ['--drip-opacity' as string]: d.opacity,
               ['--drip-stretch' as string]: d.stretch,
