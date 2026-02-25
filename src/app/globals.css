@@ -138,78 +138,95 @@ ul {
 .foam-drip {
   position: absolute;
   top: -30px;
-  border-radius: 50%;
   opacity: 0;
+  transform-origin: center top;
   background: radial-gradient(
-    ellipse at 45% 35%,
+    ellipse at 50% 20%,
     rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 253, 248, 0.95) 30%,
-    rgba(250, 245, 235, 0.9) 60%,
+    rgba(255, 253, 248, 0.95) 35%,
+    rgba(250, 245, 235, 0.9) 65%,
     rgba(245, 238, 224, 0.85) 100%
   );
 }
 
-/* クリームの流れ（帯状に伸びる太い泡） */
-.foam-stream {
-  border-radius: 45% 55% 50% 50% / 30% 30% 70% 70%;
+/* 丸い泡 */
+.foam-blob {
+  border-radius: 50%;
 }
 
-/* 3つのアニメーション変種 - 滑らかで粘性のある落下 */
+/* クリームの垂れ（雫型: 上が太く下が細い） */
+.foam-stream {
+  border-radius: 48% 52% 42% 58% / 20% 20% 80% 80%;
+}
+
+/* 3つのアニメーション変種 - クリームが溜まって→垂れ落ちる */
 .foam-drip-v0 {
-  animation: creamFlow0 cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+  animation: creamDrip0 cubic-bezier(0.22, 0.0, 0.3, 1) forwards;
 }
 .foam-drip-v1 {
-  animation: creamFlow1 cubic-bezier(0.33, 0.0, 0.2, 1) forwards;
+  animation: creamDrip1 cubic-bezier(0.18, 0.0, 0.25, 1) forwards;
 }
 .foam-drip-v2 {
-  animation: creamFlow2 cubic-bezier(0.45, 0.0, 0.15, 1) forwards;
+  animation: creamDrip2 cubic-bezier(0.25, 0.0, 0.2, 1) forwards;
 }
 
-/* 変種0: まっすぐ滑らかに落ちる */
-@keyframes creamFlow0 {
+/* 変種0: 溜まって→とろっと垂れる */
+@keyframes creamDrip0 {
   0% {
-    transform: translateY(0) translateX(0) scale(0.4) scaleY(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: var(--drip-opacity, 0.85);
-    transform: translateY(8vh) translateX(calc(var(--drip-wobble, 0px) * 0.3)) scale(0.75) scaleY(1.1);
-  }
-  100% {
-    opacity: calc(var(--drip-opacity, 0.8) * 0.9);
-    transform: translateY(110vh) translateX(var(--drip-wobble, 0px)) scale(1.03) scaleY(var(--drip-stretch, 1.5));
-  }
-}
-
-/* 変種1: やや遅れて現れ滑らかに落ちる */
-@keyframes creamFlow1 {
-  0% {
-    transform: translateY(0) translateX(0) scale(0.35) scaleY(1);
-    opacity: 0;
-  }
-  12% {
-    opacity: var(--drip-opacity, 0.85);
-    transform: translateY(6vh) translateX(calc(var(--drip-wobble, 0px) * 0.25)) scale(0.65) scaleY(1.05);
-  }
-  100% {
-    opacity: calc(var(--drip-opacity, 0.8) * 0.88);
-    transform: translateY(112vh) translateX(var(--drip-wobble, 0px)) scale(1.02) scaleY(var(--drip-stretch, 1.6));
-  }
-}
-
-/* 変種2: ふわっと現れてゆっくり落ちる */
-@keyframes creamFlow2 {
-  0% {
-    transform: translateY(0) translateX(0) scale(0.3) scaleY(1);
+    transform: translateY(0) translateX(0) scaleX(1) scaleY(0.3);
     opacity: 0;
   }
   8% {
-    opacity: var(--drip-opacity, 0.85);
-    transform: translateY(4vh) translateX(calc(var(--drip-wobble, 0px) * 0.2)) scale(0.6) scaleY(1.0);
+    opacity: var(--drip-opacity, 0.9);
+    transform: translateY(0) translateX(0) scaleX(1) scaleY(0.5);
+  }
+  20% {
+    opacity: var(--drip-opacity, 0.9);
+    transform: translateY(2vh) translateX(calc(var(--drip-wobble, 0px) * 0.15)) scaleX(0.85) scaleY(var(--drip-stretch, 1.8));
   }
   100% {
-    opacity: calc(var(--drip-opacity, 0.82) * 0.9);
-    transform: translateY(108vh) translateX(var(--drip-wobble, 0px)) scale(1.04) scaleY(var(--drip-stretch, 1.55));
+    opacity: calc(var(--drip-opacity, 0.8) * 0.85);
+    transform: translateY(110vh) translateX(var(--drip-wobble, 0px)) scaleX(0.6) scaleY(var(--drip-stretch, 3.0));
+  }
+}
+
+/* 変種1: ゆっくり溜まって→ぬるっと垂れる */
+@keyframes creamDrip1 {
+  0% {
+    transform: translateY(0) translateX(0) scaleX(1) scaleY(0.25);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--drip-opacity, 0.9);
+    transform: translateY(0) translateX(0) scaleX(1.05) scaleY(0.45);
+  }
+  25% {
+    opacity: var(--drip-opacity, 0.9);
+    transform: translateY(3vh) translateX(calc(var(--drip-wobble, 0px) * 0.1)) scaleX(0.8) scaleY(var(--drip-stretch, 2.0));
+  }
+  100% {
+    opacity: calc(var(--drip-opacity, 0.8) * 0.82);
+    transform: translateY(112vh) translateX(var(--drip-wobble, 0px)) scaleX(0.55) scaleY(var(--drip-stretch, 3.5));
+  }
+}
+
+/* 変種2: 短めにぷるっと垂れる */
+@keyframes creamDrip2 {
+  0% {
+    transform: translateY(0) translateX(0) scaleX(1) scaleY(0.35);
+    opacity: 0;
+  }
+  6% {
+    opacity: var(--drip-opacity, 0.9);
+    transform: translateY(0) translateX(0) scaleX(0.95) scaleY(0.55);
+  }
+  18% {
+    opacity: var(--drip-opacity, 0.9);
+    transform: translateY(1.5vh) translateX(calc(var(--drip-wobble, 0px) * 0.1)) scaleX(0.8) scaleY(var(--drip-stretch, 1.6));
+  }
+  100% {
+    opacity: calc(var(--drip-opacity, 0.82) * 0.88);
+    transform: translateY(108vh) translateX(var(--drip-wobble, 0px)) scaleX(0.65) scaleY(var(--drip-stretch, 2.8));
   }
 }
 
