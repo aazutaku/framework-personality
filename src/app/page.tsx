@@ -65,68 +65,91 @@ function FoamOverlay() {
     const drips: FoamDrip[] = [];
     let id = 0;
 
-    // クリームの流れ（太い帯状の泡が流れ落ちる）
-    for (let i = 0; i < 18; i++) {
+    // === 第1波: 一気にドバッと溢れる（delay 0〜0.3s） ===
+
+    // 太いクリームの流れ（画面を覆う幅広の帯）
+    for (let i = 0; i < 25; i++) {
       drips.push({
         id: id++,
-        left: Math.random() * 100,
-        size: 30 + Math.random() * 40,
-        delay: 0.6 + Math.random() * 0.8,
-        duration: 1.8 + Math.random() * 1.2,
-        wobble: -8 + Math.random() * 16,
+        left: (i / 25) * 100 + (Math.random() - 0.5) * 8,
+        size: 35 + Math.random() * 50,
+        delay: Math.random() * 0.3,
+        duration: 1.6 + Math.random() * 1.0,
+        wobble: -5 + Math.random() * 10,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.7 + Math.random() * 0.3,
-        stretch: 2.5 + Math.random() * 2.0,
-        blur: 6 + Math.random() * 8,
+        opacity: 0.8 + Math.random() * 0.2,
+        stretch: 2.5 + Math.random() * 2.5,
+        blur: 6 + Math.random() * 10,
         kind: 'stream',
       });
     }
 
-    // 大きめのクリーミーな塊（ぼかし強め）
-    for (let i = 0; i < 40; i++) {
+    // 大きめのクリーミーな塊（第1波の隙間を埋める）
+    for (let i = 0; i < 50; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
-        size: 20 + Math.random() * 25,
-        delay: 0.7 + Math.random() * 1.0,
-        duration: 1.4 + Math.random() * 1.2,
-        wobble: -10 + Math.random() * 20,
+        size: 22 + Math.random() * 28,
+        delay: Math.random() * 0.25,
+        duration: 1.3 + Math.random() * 1.0,
+        wobble: -6 + Math.random() * 12,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.75 + Math.random() * 0.25,
+        opacity: 0.8 + Math.random() * 0.2,
         stretch: 1.5 + Math.random() * 1.5,
         blur: 4 + Math.random() * 6,
         kind: 'blob',
       });
     }
 
-    // 中くらいの泡（ソフトフォーカス）
+    // === 第2波: 続いて押し寄せる（delay 0.2〜0.6s） ===
+
+    // 追加のクリーム流れ
+    for (let i = 0; i < 20; i++) {
+      drips.push({
+        id: id++,
+        left: Math.random() * 100,
+        size: 30 + Math.random() * 40,
+        delay: 0.2 + Math.random() * 0.4,
+        duration: 1.5 + Math.random() * 1.2,
+        wobble: -6 + Math.random() * 12,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.75 + Math.random() * 0.25,
+        stretch: 2.0 + Math.random() * 2.0,
+        blur: 5 + Math.random() * 8,
+        kind: 'stream',
+      });
+    }
+
+    // 中くらいの泡（第2波）
     for (let i = 0; i < 60; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
-        size: 10 + Math.random() * 14,
-        delay: 0.8 + Math.random() * 1.0,
-        duration: 1.0 + Math.random() * 1.2,
-        wobble: -12 + Math.random() * 24,
+        size: 12 + Math.random() * 16,
+        delay: 0.15 + Math.random() * 0.45,
+        duration: 1.0 + Math.random() * 1.0,
+        wobble: -8 + Math.random() * 16,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.7 + Math.random() * 0.3,
+        opacity: 0.75 + Math.random() * 0.25,
         stretch: 1.2 + Math.random() * 1.0,
         blur: 2 + Math.random() * 4,
         kind: 'blob',
       });
     }
 
-    // 細かい泡（ディテール用、ぼかし少なめ）
-    for (let i = 0; i < 50; i++) {
+    // === 第3波: さらに溢れ続ける（delay 0.4〜0.9s） ===
+
+    // 細かい泡の追加ラッシュ
+    for (let i = 0; i < 70; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
-        size: 5 + Math.random() * 8,
-        delay: 0.7 + Math.random() * 1.3,
-        duration: 0.8 + Math.random() * 1.0,
-        wobble: -15 + Math.random() * 30,
+        size: 6 + Math.random() * 10,
+        delay: 0.4 + Math.random() * 0.5,
+        duration: 0.8 + Math.random() * 0.8,
+        wobble: -10 + Math.random() * 20,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.5 + Math.random() * 0.4,
+        opacity: 0.6 + Math.random() * 0.35,
         stretch: 1.0 + Math.random() * 0.6,
         blur: 1 + Math.random() * 2,
         kind: 'blob',
