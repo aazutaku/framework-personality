@@ -37,6 +37,10 @@ interface FoamDrip {
   size: number;
   delay: number;
   duration: number;
+  wobble: number;
+  variant: number;
+  opacity: number;
+  stretch: number;
 }
 
 function FoamOverlay() {
@@ -55,15 +59,48 @@ function FoamOverlay() {
     }));
     setBubbles(b);
 
-    // 上から溢れ落ちてくる細かい白泡
+    // 上から溢れ落ちてくる細かい白泡（3段階のサイズ）
     const drips: FoamDrip[] = [];
-    for (let i = 0; i < 120; i++) {
+    // 小さい泡（細かい質感）
+    for (let i = 0; i < 80; i++) {
       drips.push({
         id: i,
         left: Math.random() * 100,
-        size: 8 + Math.random() * 18,
-        delay: 0.8 + Math.random() * 1.0,
+        size: 4 + Math.random() * 7,
+        delay: 0.7 + Math.random() * 1.2,
+        duration: 0.6 + Math.random() * 1.0,
+        wobble: -20 + Math.random() * 40,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.6 + Math.random() * 0.4,
+        stretch: 1.0 + Math.random() * 0.5,
+      });
+    }
+    // 中くらいの泡
+    for (let i = 80; i < 150; i++) {
+      drips.push({
+        id: i,
+        left: Math.random() * 100,
+        size: 10 + Math.random() * 14,
+        delay: 0.8 + Math.random() * 0.9,
         duration: 0.8 + Math.random() * 1.2,
+        wobble: -15 + Math.random() * 30,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.75 + Math.random() * 0.25,
+        stretch: 1.2 + Math.random() * 0.8,
+      });
+    }
+    // 大きい泡（厚みのある塊）
+    for (let i = 150; i < 180; i++) {
+      drips.push({
+        id: i,
+        left: Math.random() * 100,
+        size: 22 + Math.random() * 16,
+        delay: 0.9 + Math.random() * 0.6,
+        duration: 1.2 + Math.random() * 1.0,
+        wobble: -10 + Math.random() * 20,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.85 + Math.random() * 0.15,
+        stretch: 1.5 + Math.random() * 1.0,
       });
     }
     setFoamDrips(drips);
@@ -92,13 +129,16 @@ function FoamOverlay() {
         {foamDrips.map((d) => (
           <div
             key={d.id}
-            className="foam-drip"
+            className={`foam-drip foam-drip-v${d.variant}`}
             style={{
               left: `${d.left}%`,
               width: `${d.size}px`,
               height: `${d.size}px`,
               animationDelay: `${d.delay}s`,
               animationDuration: `${d.duration}s`,
+              ['--drip-wobble' as string]: `${d.wobble}px`,
+              ['--drip-opacity' as string]: d.opacity,
+              ['--drip-stretch' as string]: d.stretch,
             }}
           />
         ))}
