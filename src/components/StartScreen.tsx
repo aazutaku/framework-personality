@@ -5,7 +5,6 @@ interface StartScreenProps {
 export default function StartScreen({ onStart }: StartScreenProps) {
   return (
     <div className="start-screen">
-      <div className="start-icon">🍺</div>
       <h1 className="start-title">
         フレームワーク
         <br />

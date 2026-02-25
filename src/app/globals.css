@@ -367,16 +367,6 @@ ul {
   gap: 16px;
 }
 
-.start-icon {
-  font-size: 72px;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
 .start-title {
   font-size: 32px;
   font-weight: 800;
