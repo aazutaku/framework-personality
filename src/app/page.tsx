@@ -65,33 +65,33 @@ function FoamOverlay() {
     const drips: FoamDrip[] = [];
     let id = 0;
 
-    // === 第1波: クリームがとろ〜っと垂れ始める（delay 0〜0.3s） ===
+    // === 第1波: ちょろっと垂れ始める（delay 0〜0.5s, 少量） ===
 
-    // メインの垂れ（太いクリーム、画面を均等に覆う）
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 8; i++) {
       drips.push({
         id: id++,
-        left: (i / 50) * 100 + (Math.random() - 0.5) * 4,
-        size: 25 + Math.random() * 35,
-        delay: Math.random() * 0.3,
-        duration: 2.0 + Math.random() * 1.2,
+        left: 10 + Math.random() * 80,
+        size: 15 + Math.random() * 20,
+        delay: Math.random() * 0.5,
+        duration: 2.2 + Math.random() * 1.0,
         wobble: -3 + Math.random() * 6,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.85 + Math.random() * 0.15,
-        stretch: 3.0 + Math.random() * 2.0,
-        blur: 4 + Math.random() * 6,
+        opacity: 0.8 + Math.random() * 0.2,
+        stretch: 2.5 + Math.random() * 1.5,
+        blur: 3 + Math.random() * 4,
         kind: 'stream',
       });
     }
 
-    // 隙間を埋める中太の垂れ
-    for (let i = 0; i < 60; i++) {
+    // === 第2波: じわじわ増えてくる（delay 0.4〜1.0s） ===
+
+    for (let i = 0; i < 25; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
-        size: 18 + Math.random() * 22,
-        delay: Math.random() * 0.25,
-        duration: 1.8 + Math.random() * 1.0,
+        size: 18 + Math.random() * 25,
+        delay: 0.4 + Math.random() * 0.6,
+        duration: 2.0 + Math.random() * 1.0,
         wobble: -4 + Math.random() * 8,
         variant: Math.floor(Math.random() * 3),
         opacity: 0.8 + Math.random() * 0.2,
@@ -101,57 +101,124 @@ function FoamOverlay() {
       });
     }
 
-    // === 第2波: さらにクリームが押し出される（delay 0.2〜0.6s） ===
+    // 丸い泡も混ざり始める
+    for (let i = 0; i < 15; i++) {
+      drips.push({
+        id: id++,
+        left: Math.random() * 100,
+        size: 12 + Math.random() * 16,
+        delay: 0.5 + Math.random() * 0.5,
+        duration: 1.6 + Math.random() * 0.8,
+        wobble: -4 + Math.random() * 8,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.75 + Math.random() * 0.25,
+        stretch: 1.2 + Math.random() * 0.8,
+        blur: 2 + Math.random() * 3,
+        kind: 'blob',
+      });
+    }
 
-    // 追加の垂れ
+    // === 第3波: かなり増えてきた（delay 0.9〜1.6s） ===
+
     for (let i = 0; i < 50; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
         size: 20 + Math.random() * 30,
-        delay: 0.2 + Math.random() * 0.4,
+        delay: 0.9 + Math.random() * 0.7,
         duration: 1.8 + Math.random() * 1.2,
         wobble: -4 + Math.random() * 8,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.8 + Math.random() * 0.2,
-        stretch: 2.5 + Math.random() * 2.0,
-        blur: 3 + Math.random() * 6,
+        opacity: 0.82 + Math.random() * 0.18,
+        stretch: 2.8 + Math.random() * 2.0,
+        blur: 3 + Math.random() * 5,
         kind: 'stream',
       });
     }
 
-    // 丸い塊（垂れの間にぷくっとした泡）
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
         size: 14 + Math.random() * 18,
-        delay: 0.1 + Math.random() * 0.5,
+        delay: 1.0 + Math.random() * 0.6,
         duration: 1.4 + Math.random() * 1.0,
         wobble: -5 + Math.random() * 10,
         variant: Math.floor(Math.random() * 3),
         opacity: 0.75 + Math.random() * 0.25,
-        stretch: 1.2 + Math.random() * 0.8,
+        stretch: 1.3 + Math.random() * 0.8,
         blur: 2 + Math.random() * 4,
         kind: 'blob',
       });
     }
 
-    // === 第3波: 細い垂れが追い打ち（delay 0.4〜0.9s） ===
+    // === 第4波: ドバーッと溢れる（delay 1.5〜2.3s, 大量） ===
 
-    for (let i = 0; i < 70; i++) {
+    // 太いクリームで画面を均等に覆う
+    for (let i = 0; i < 60; i++) {
+      drips.push({
+        id: id++,
+        left: (i / 60) * 100 + (Math.random() - 0.5) * 4,
+        size: 25 + Math.random() * 40,
+        delay: 1.5 + Math.random() * 0.8,
+        duration: 1.8 + Math.random() * 1.2,
+        wobble: -3 + Math.random() * 6,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.85 + Math.random() * 0.15,
+        stretch: 3.0 + Math.random() * 2.5,
+        blur: 4 + Math.random() * 6,
+        kind: 'stream',
+      });
+    }
+
+    // 隙間を埋め尽くす
+    for (let i = 0; i < 60; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
-        size: 8 + Math.random() * 14,
-        delay: 0.4 + Math.random() * 0.5,
-        duration: 1.2 + Math.random() * 0.8,
+        size: 18 + Math.random() * 28,
+        delay: 1.6 + Math.random() * 0.7,
+        duration: 1.6 + Math.random() * 1.0,
+        wobble: -4 + Math.random() * 8,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.8 + Math.random() * 0.2,
+        stretch: 2.5 + Math.random() * 2.0,
+        blur: 3 + Math.random() * 5,
+        kind: 'stream',
+      });
+    }
+
+    // === 第5波: 止まらない追い打ち（delay 2.2〜3.0s） ===
+
+    for (let i = 0; i < 50; i++) {
+      drips.push({
+        id: id++,
+        left: Math.random() * 100,
+        size: 12 + Math.random() * 22,
+        delay: 2.2 + Math.random() * 0.8,
+        duration: 1.2 + Math.random() * 1.0,
+        wobble: -5 + Math.random() * 10,
+        variant: Math.floor(Math.random() * 3),
+        opacity: 0.7 + Math.random() * 0.3,
+        stretch: 2.0 + Math.random() * 2.0,
+        blur: 2 + Math.random() * 4,
+        kind: 'stream',
+      });
+    }
+
+    for (let i = 0; i < 40; i++) {
+      drips.push({
+        id: id++,
+        left: Math.random() * 100,
+        size: 10 + Math.random() * 14,
+        delay: 2.3 + Math.random() * 0.7,
+        duration: 1.0 + Math.random() * 0.8,
         wobble: -6 + Math.random() * 12,
         variant: Math.floor(Math.random() * 3),
-        opacity: 0.65 + Math.random() * 0.3,
-        stretch: 2.0 + Math.random() * 1.5,
+        opacity: 0.7 + Math.random() * 0.25,
+        stretch: 1.5 + Math.random() * 1.0,
         blur: 1 + Math.random() * 3,
-        kind: 'stream',
+        kind: 'blob',
       });
     }
 
@@ -210,7 +277,7 @@ export default function Home() {
   const [showFoam, setShowFoam] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowFoam(false), 4500);
+    const timer = setTimeout(() => setShowFoam(false), 7000);
     return () => clearTimeout(timer);
   }, []);
 
