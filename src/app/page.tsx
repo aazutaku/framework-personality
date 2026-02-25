@@ -45,22 +45,46 @@ interface FoamDrip {
   kind: 'blob' | 'stream';
 }
 
-function FoamOverlay() {
+function CarbonationBubbles() {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
-  const [foamDrips, setFoamDrips] = useState<FoamDrip[]>([]);
 
   useEffect(() => {
-    // 炭酸の泡（ビール中を上昇）
-    const b = Array.from({ length: 30 }, (_, i) => ({
+    const b = Array.from({ length: 40 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       size: 3 + Math.random() * 10,
-      delay: Math.random() * 1.4,
-      duration: 1.2 + Math.random() * 1.8,
+      delay: Math.random() * 3.0,
+      duration: 2.0 + Math.random() * 3.0,
       wobble: -15 + Math.random() * 30,
     }));
     setBubbles(b);
+  }, []);
 
+  return (
+    <div className="carbonation-bg">
+      {bubbles.map((b) => (
+        <div
+          key={b.id}
+          className="bubble-loop"
+          style={{
+            left: `${b.left}%`,
+            bottom: '0%',
+            width: `${b.size}px`,
+            height: `${b.size}px`,
+            animationDelay: `${b.delay}s`,
+            animationDuration: `${b.duration}s`,
+            ['--wobble' as string]: `${b.wobble}px`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function FoamOverlay() {
+  const [foamDrips, setFoamDrips] = useState<FoamDrip[]>([]);
+
+  useEffect(() => {
     // 上から溢れ落ちてくるクリーミーな白泡
     const drips: FoamDrip[] = [];
     let id = 0;
@@ -227,23 +251,7 @@ function FoamOverlay() {
 
   return (
     <div className="foam-overlay">
-      <div className="foam-beer">
-        {bubbles.map((b) => (
-          <div
-            key={b.id}
-            className="bubble"
-            style={{
-              left: `${b.left}%`,
-              bottom: '0%',
-              width: `${b.size}px`,
-              height: `${b.size}px`,
-              animationDelay: `${b.delay}s`,
-              animationDuration: `${b.duration}s`,
-              ['--wobble' as string]: `${b.wobble}px`,
-            }}
-          />
-        ))}
-      </div>
+      <div className="foam-beer" />
       <div className="foam-cascade">
         {foamDrips.map((d) => (
           <div
@@ -333,6 +341,7 @@ export default function Home() {
 
   return (
     <>
+      <CarbonationBubbles />
       {showFoam && <FoamOverlay />}
       <div className="app">
         <div className={`app-content screen-container ${fadeClass}`}>
