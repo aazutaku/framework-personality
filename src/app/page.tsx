@@ -68,10 +68,10 @@ function FoamOverlay() {
     // === 第1波: クリームがとろ〜っと垂れ始める（delay 0〜0.3s） ===
 
     // メインの垂れ（太いクリーム、画面を均等に覆う）
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 50; i++) {
       drips.push({
         id: id++,
-        left: (i / 30) * 100 + (Math.random() - 0.5) * 6,
+        left: (i / 50) * 100 + (Math.random() - 0.5) * 4,
         size: 25 + Math.random() * 35,
         delay: Math.random() * 0.3,
         duration: 2.0 + Math.random() * 1.2,
@@ -85,7 +85,7 @@ function FoamOverlay() {
     }
 
     // 隙間を埋める中太の垂れ
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 60; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
@@ -104,7 +104,7 @@ function FoamOverlay() {
     // === 第2波: さらにクリームが押し出される（delay 0.2〜0.6s） ===
 
     // 追加の垂れ
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 50; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
@@ -121,7 +121,7 @@ function FoamOverlay() {
     }
 
     // 丸い塊（垂れの間にぷくっとした泡）
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 50; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
@@ -139,7 +139,7 @@ function FoamOverlay() {
 
     // === 第3波: 細い垂れが追い打ち（delay 0.4〜0.9s） ===
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 70; i++) {
       drips.push({
         id: id++,
         left: Math.random() * 100,
