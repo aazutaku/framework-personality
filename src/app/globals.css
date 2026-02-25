@@ -10,16 +10,16 @@
   --bg-primary: #1a0e00;
   --bg-secondary: #2d1800;
   --bg-tertiary: #1a1000;
-  --accent: #f59e0b;
-  --accent-light: #fbbf24;
-  --text-primary: #fef3c7;
-  --text-secondary: rgba(254, 243, 199, 0.75);
-  --text-muted: rgba(254, 243, 199, 0.6);
-  --card-bg: rgba(245, 158, 11, 0.12);
-  --card-border: rgba(245, 158, 11, 0.3);
-  --success: #4ade80;
-  --warning: #fbbf24;
-  --danger: #f87171;
+  --accent: #7c3a00;
+  --accent-light: #92400e;
+  --text-primary: #2d1200;
+  --text-secondary: rgba(45, 18, 0, 0.72);
+  --text-muted: rgba(45, 18, 0, 0.5);
+  --card-bg: rgba(255, 255, 255, 0.22);
+  --card-border: rgba(255, 255, 255, 0.38);
+  --success: #15803d;
+  --warning: #92400e;
+  --danger: #b91c1c;
 
   font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP',
     system-ui, -apple-system, sans-serif;
@@ -67,7 +67,6 @@ ul {
   padding: 20px 16px;
   padding-bottom: env(safe-area-inset-bottom, 20px);
   position: relative;
-  background: rgba(26, 14, 0, 0.55);
 }
 
 /* ===== Foam Intro Animation ===== */
@@ -382,7 +381,7 @@ ul {
   font-size: 32px;
   font-weight: 800;
   line-height: 1.3;
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  background: linear-gradient(135deg, #5c2d00 0%, #3d1f00 50%, #1a0e00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -418,18 +417,18 @@ ul {
   max-width: 280px;
   padding: 16px 32px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: #1a0e00;
+  background: rgba(255, 252, 245, 0.88);
+  color: #2d1200;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  box-shadow: 0 4px 24px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .start-button:active {
   transform: scale(0.96);
-  box-shadow: 0 2px 12px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .start-note {
@@ -453,7 +452,7 @@ ul {
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #f59e0b, #d97706);
+  background: linear-gradient(90deg, #5c2d00, #3d1f00);
   border-radius: 2px;
   transition: width 0.4s ease;
 }
@@ -505,8 +504,8 @@ ul {
 }
 
 .choice-button:active {
-  background: rgba(245, 158, 11, 0.2);
-  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.38);
+  border-color: rgba(45, 18, 0, 0.3);
   transform: scale(0.98);
 }
 
@@ -518,8 +517,8 @@ ul {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #1a0e00;
+  background: linear-gradient(135deg, #5c2d00, #3d1f00);
+  color: #fef3c7;
   font-size: 13px;
   font-weight: 700;
   margin-top: 1px;
@@ -556,7 +555,7 @@ ul {
 .result-name {
   font-size: 28px;
   font-weight: 800;
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  background: linear-gradient(135deg, #5c2d00 0%, #3d1f00 50%, #1a0e00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -612,7 +611,7 @@ ul {
 }
 
 .warning-card {
-  border-color: rgba(251, 191, 36, 0.3);
+  border-color: rgba(146, 64, 14, 0.3);
 }
 
 .warning-card p {
@@ -622,8 +621,8 @@ ul {
 }
 
 .drinking-card {
-  border-color: rgba(245, 158, 11, 0.4);
-  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(146, 64, 14, 0.35);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .drinking-card p {
@@ -633,8 +632,8 @@ ul {
 }
 
 .command-card {
-  border-color: rgba(248, 113, 113, 0.3);
-  background: rgba(248, 113, 113, 0.08);
+  border-color: rgba(185, 28, 28, 0.3);
+  background: rgba(185, 28, 28, 0.06);
 }
 
 .command-card p {
@@ -682,21 +681,21 @@ ul {
 .score-bar-container {
   flex: 1;
   height: 20px;
-  background: rgba(254, 243, 199, 0.08);
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .score-bar {
   height: 100%;
-  background: rgba(254, 243, 199, 0.22);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   transition: width 0.8s ease;
   min-width: 4px;
 }
 
 .score-bar-primary {
-  background: linear-gradient(90deg, #f59e0b, #d97706);
+  background: linear-gradient(90deg, #5c2d00, #3d1f00);
 }
 
 .score-value {
@@ -720,18 +719,18 @@ ul {
   width: 100%;
   padding: 16px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: #1a0e00;
+  background: rgba(255, 252, 245, 0.88);
+  color: #2d1200;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.03em;
-  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .share-button:active {
   transform: scale(0.97);
-  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .retry-button {
