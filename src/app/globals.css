@@ -137,6 +137,40 @@ ul {
   }
 }
 
+/* 常駐する上部の泡帯（クリーミーな層） */
+.foam-top-band {
+  position: absolute;
+  top: -8px;
+  left: -10%;
+  right: -10%;
+  height: 80px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 254, 250, 0.95) 0%,
+    rgba(252, 248, 240, 0.85) 30%,
+    rgba(248, 242, 230, 0.5) 60%,
+    rgba(245, 238, 224, 0.15) 85%,
+    transparent 100%
+  );
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  filter: blur(3px);
+}
+
+.foam-top-band-soft {
+  position: absolute;
+  top: 20px;
+  left: -15%;
+  right: -15%;
+  height: 120px;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(255, 253, 248, 0.5) 0%,
+    rgba(248, 242, 230, 0.25) 50%,
+    transparent 100%
+  );
+  filter: blur(8px);
+}
+
 /* ---- Phase 2: Foam overflows from top ---- */
 .foam-cascade {
   position: absolute;
@@ -285,8 +319,7 @@ ul {
 
 @keyframes foamBandAppear {
   0% { opacity: 0; transform: scaleY(0.3); }
-  40% { opacity: 0.85; transform: scaleY(1); }
-  100% { opacity: 1; transform: scaleY(1.1); }
+  100% { opacity: 1; transform: scaleY(1); }
 }
 
 /* ---- Phase 3: 泡がフェードアウト → ビール背景が残る ---- */
@@ -300,21 +333,23 @@ ul {
 
 /* Hide overlay after done */
 .foam-overlay {
-  animation: overlayDone 0.8s ease-out 5.5s forwards;
+  animation: overlayDone 1.5s cubic-bezier(0.4, 0, 0.2, 1) 4.5s forwards;
 }
 
 @keyframes overlayDone {
-  to { opacity: 0; visibility: hidden; }
+  0% { opacity: 1; }
+  99% { opacity: 0; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
 }
 
 /* ---- Content reveal ---- */
 .app-content {
   opacity: 0;
-  animation: contentReveal 0.8s ease-out 5.0s forwards;
+  animation: contentReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) 5.2s forwards;
 }
 
 @keyframes contentReveal {
-  0% { opacity: 0; transform: translateY(12px); }
+  0% { opacity: 0; transform: translateY(8px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 

@@ -77,6 +77,8 @@ function CarbonationBubbles() {
           }}
         />
       ))}
+      <div className="foam-top-band" />
+      <div className="foam-top-band-soft" />
     </div>
   );
 }
