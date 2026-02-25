@@ -343,9 +343,10 @@ ul {
 }
 
 /* ---- Content reveal ---- */
+/* オーバーレイの下で先に表示完了させ、overlayが消える頃にはもう見えている */
 .app-content {
   opacity: 0;
-  animation: contentReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) 5.2s forwards;
+  animation: contentReveal 1.0s cubic-bezier(0.4, 0, 0.2, 1) 3.5s forwards;
 }
 
 @keyframes contentReveal {
