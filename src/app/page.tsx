@@ -22,14 +22,6 @@ const initialScores: Record<FrameworkType, number> = {
   none: 0,
 };
 
-interface FoamBlob {
-  id: number;
-  left: number;
-  size: number;
-  delay: number;
-  layer: number;
-}
-
 interface Bubble {
   id: number;
   left: number;
@@ -39,45 +31,20 @@ interface Bubble {
   wobble: number;
 }
 
+interface FoamDrip {
+  id: number;
+  left: number;
+  size: number;
+  delay: number;
+  duration: number;
+}
+
 function FoamOverlay() {
-  const [foamBlobs, setFoamBlobs] = useState<FoamBlob[]>([]);
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
+  const [foamDrips, setFoamDrips] = useState<FoamDrip[]>([]);
 
   useEffect(() => {
-    // 3層の泡ブロブ（奥→手前で大きく）
-    const blobs: FoamBlob[] = [];
-    // 奥の層: 小さめ、密に
-    for (let i = 0; i < 14; i++) {
-      blobs.push({
-        id: i,
-        left: -5 + (i / 13) * 110,
-        size: 50 + Math.random() * 30,
-        delay: Math.random() * 0.3,
-        layer: 0,
-      });
-    }
-    // 中間層
-    for (let i = 0; i < 10; i++) {
-      blobs.push({
-        id: 100 + i,
-        left: -5 + (i / 9) * 110,
-        size: 55 + Math.random() * 35,
-        delay: Math.random() * 0.3 + 0.05,
-        layer: 1,
-      });
-    }
-    // 手前の層: 大きく、少なめ
-    for (let i = 0; i < 8; i++) {
-      blobs.push({
-        id: 200 + i,
-        left: -5 + (i / 7) * 110,
-        size: 60 + Math.random() * 40,
-        delay: Math.random() * 0.3 + 0.1,
-        layer: 2,
-      });
-    }
-    setFoamBlobs(blobs);
-
+    // 炭酸の泡（ビール中を上昇）
     const b = Array.from({ length: 30 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
@@ -87,6 +54,19 @@ function FoamOverlay() {
       wobble: -15 + Math.random() * 30,
     }));
     setBubbles(b);
+
+    // 上から溢れ落ちてくる細かい白泡
+    const drips: FoamDrip[] = [];
+    for (let i = 0; i < 120; i++) {
+      drips.push({
+        id: i,
+        left: Math.random() * 100,
+        size: 8 + Math.random() * 18,
+        delay: 0.8 + Math.random() * 1.0,
+        duration: 0.8 + Math.random() * 1.2,
+      });
+    }
+    setFoamDrips(drips);
   }, []);
 
   return (
@@ -107,21 +87,23 @@ function FoamOverlay() {
             }}
           />
         ))}
-        <div className="foam-head">
-          {foamBlobs.map((blob) => (
-            <div
-              key={blob.id}
-              className={`foam-blob foam-blob-layer${blob.layer}`}
-              style={{
-                left: `${blob.left}%`,
-                width: `${blob.size}px`,
-                height: `${blob.size}px`,
-                animationDelay: `${blob.delay}s`,
-              }}
-            />
-          ))}
-        </div>
       </div>
+      <div className="foam-cascade">
+        {foamDrips.map((d) => (
+          <div
+            key={d.id}
+            className="foam-drip"
+            style={{
+              left: `${d.left}%`,
+              width: `${d.size}px`,
+              height: `${d.size}px`,
+              animationDelay: `${d.delay}s`,
+              animationDuration: `${d.duration}s`,
+            }}
+          />
+        ))}
+      </div>
+      <div className="foam-whiteout" />
     </div>
   );
 }
@@ -135,7 +117,7 @@ export default function Home() {
   const [showFoam, setShowFoam] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowFoam(false), 3200);
+    const timer = setTimeout(() => setShowFoam(false), 4500);
     return () => clearTimeout(timer);
   }, []);
 
