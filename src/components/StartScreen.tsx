@@ -8,7 +8,7 @@ export default function StartScreen({ onStart }: StartScreenProps) {
       <h1 className="start-title">
         フレームワーク
         <br />
-        飲み会診断
+        性格診断
       </h1>
       <p className="start-subtitle">
         あなたの思考のクセから
